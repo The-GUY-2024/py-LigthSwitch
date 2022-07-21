@@ -111,13 +111,17 @@
 <body>
 
    
-   <h2>GPIO 4
    
+   {% for pin in pins %}
+   <h2>{{ pins[pin].name }}
+   {% if pins[pin].state == true %}
       is currently <strong>on</strong></h2><div class="row"><div class="col-md-2">
-      <a href="/4/off" class="btn btn-block btn-lg btn-default" role="button"><h3 class="btn-text"> Turn off</h3> </a></div></div>
-   
-   
-
+      <button href="/{{pin}}/off" class="btn btn-block btn-lg btn-default" role="button"> <h3 class="btn-text"> Turn off </h3> </button></div></div>
+   {% else %}
+      is currently <strong>off</strong></h2><div class="row"><div class="col-md-2">
+      <button href="/{{pin}}/on" class="btn btn-block btn-lg btn-primary" role="button"> <h3 class="btn-text"> Turn on </h3> </button></div></div>
+   {% endif %}
+   {% endfor %}
 
 
    <div class="footer">
