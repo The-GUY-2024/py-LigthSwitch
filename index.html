@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> PY-Room Ligth</title>
+        
+        <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+        <meta http-equiv='refresh' content='10'>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div id="btnContainer">
+            <center>
+                Pin GPIO
+                <input value={{data[0]}} readonly> </input>
+                <button id='dig2on'> Turn On</button> 
+                <button id='dig2off'> Turn Off</button>
+            </center>
+        </div>
+
+
+        <script>
+            //Event Listener
+            var buttonClick = document.getElementById('btnContainer').addEventListener('click', function(event){
+                if (event.target.nodeName =="BUTTON"){
+                    var tar = event.target.id;
+                    console.log(tar);
+                    $.getJSON('/'+tar,
+                    function(data){
+                        //do nothing
+                    });
+                    return false;
+                }
+            });
+        </script>
+    </body>
+</html>
