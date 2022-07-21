@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head> 
    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSTq3LNhtXNdxSvqqnAAerMniADIa6dWTUTg&usqp=CAU"/>
    <title> Room Ligth's</title>
@@ -67,7 +68,7 @@
               font-size: 100px;
       }
       body{
-         background-color: #343333;
+         background-color: #000;
       }
       .btn{
 
@@ -80,6 +81,8 @@
               display: block;
               margin-left: auto;
               margin-right: auto;
+	      background: #656565;
+	      text-decoration: none;
       }
       .btn:hover{
               background-color: #333;
@@ -94,22 +97,26 @@
               padding-top: 10%;
               
       }
+      .btn-text{
+	     color: #fff;
+	     font-size: 20px;
+	     text-align: center;
+	     padding-top: 35%;
+
+	}
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-   {% for pin in pins %}
-   <h2>{{ pins[pin].name }}
-   {% if pins[pin].state == true %}
+   
+   <h2>GPIO 4
+   
       is currently <strong>on</strong></h2><div class="row"><div class="col-md-2">
-      <button href="/{{pin}}/off" class="btn btn-block btn-lg btn-default" role="button">Turn off</button></div></div>
-   {% else %}
-      is currently <strong>off</strong></h2><div class="row"><div class="col-md-2">
-      <button href="/{{pin}}/on" class="btn btn-block btn-lg btn-primary" role="button">Turn on</button></div></div>
-   {% endif %}
-   {% endfor %}
+      <a href="/4/off" class="btn btn-block btn-lg btn-default" role="button"><h3 class="btn-text"> Turn off</h3> </a></div></div>
+   
+   
 
 
 
