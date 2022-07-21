@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head> 
+   <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSTq3LNhtXNdxSvqqnAAerMniADIa6dWTUTg&usqp=CAU"/>
+   <title> Room Ligth's</title>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+   <style>
+      .rsp-img{
+              height: 100px;
+              width: 75px;
+              margin-left: 152px;
+              margin-top: -87px;
+      }
+      .nodejs-img{
+              height: 100px;
+              width: 50px;
+              margin-left: 92px;
+              margin-top: -125px;
+              position: absolute;
+              padding-top: 39px;
+      }
+      .footer-name{
+              color: #4c4b4bba;
+              font-size: 5px;
+              margin-top: -31px;
+      }
+      .footer-text{
+              color: #4c4b4bba;
+              margin-top: 6px;
+              font-size: 20px;
+
+      }
+      .footer{
+              background-color: #242323d4;
+              position: fixed;
+              left: 0;
+              right: 0;
+              padding: 1rem;
+              color: white;
+              bottom: -0.2%;
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+              height: 40px;
+      }
+      .header{
+              background:black;
+              width: -moz-available;
+              text-align: center;
+              margin-left: -8px;
+              margin-right: -8px;
+              margin-top: -70px;
+      }
+      .Header-t{
+
+              color: #fff;
+              text-shadow:
+              0 0 5px #fff, 
+              0 0 10px #fff, 
+              0 0 20px #202020,
+              0 0 40px #00000094,
+              0 0 80px #2400ff,
+              0 0 90px #3600ff,
+              0 0 100px #0013ff,
+              0 0 150px #0e20bd;
+              text-align: center;
+              font-size: 100px;
+      }
+      body{
+         background-color: #343333;
+      }
+      .btn{
+
+              align-content: center;
+              height: 100px;
+              width: 100px;
+              font-size: 20px;
+              border-radius: 10px;
+              transform: translateY(-7px);
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+      }
+      .btn:hover{
+              background-color: #333;
+              color: #fff;
+              transform: translateY(-2px);
+      }
+      .btn-cont{
+              height: 125px;
+              background: black;
+              margin-top: 15%;
+              margin-bottom: 0%;
+              padding-top: 10%;
+              
+      }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+   {% for pin in pins %}
+   <h2>{{ pins[pin].name }}
+   {% if pins[pin].state == true %}
+      is currently <strong>on</strong></h2><div class="row"><div class="col-md-2">
+      <button href="/{{pin}}/off" class="btn btn-block btn-lg btn-default" role="button">Turn off</button></div></div>
+   {% else %}
+      is currently <strong>off</strong></h2><div class="row"><div class="col-md-2">
+      <button href="/{{pin}}/on" class="btn btn-block btn-lg btn-primary" role="button">Turn on</button></div></div>
+   {% endif %}
+   {% endfor %}
+
+
+
+   <div class="footer">
+      <h4 class="footer-text"> Power BY </h4>
+      
+      <a href="https://nodejs.org/en/">
+              <img class="nodejs-img" src="https://nodejs.org/static/images/logo.svg">
+      </a>
+      <a href="https://www.raspberrypi.org/">
+              <img class="rsp-img" src="https://www.raspberrypi.org/pagekit-assets/media/images/4913a547895720ff30c1.svg">
+      </a>
+
+      <h3 class="footer-name">Made BY Louis Castro</h3>
+   </div>
+
+</body>
+</html>
